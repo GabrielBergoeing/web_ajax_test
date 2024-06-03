@@ -1,0 +1,22 @@
+<h1>Persons</h1>
+
+<div id="user_list">
+  <%= render 'list' %>
+</div>
+
+<h2>Add a new user</h2>
+<%= form_with(model: @user, remote: true) do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div>
+    <%= form.submit 'Create user' %>
+  </div>
+<% end %>
+
+<div id="form_errors"></div>
